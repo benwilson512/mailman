@@ -15,16 +15,15 @@ defmodule Mailman.Mixfile do
 
   # Configuration for the OTP application
   def application do
-    [ applications: [:ssl, :crypto, :gen_smtp, :httpotion]]
+    [ applications: [:ssl, :crypto, :eiconv, :gen_smtp]]
   end
 
   # Returns the list of dependencies in the format:
   defp deps do
     [
+      {:eiconv, github: "zotonic/eiconv"},
       { :gen_smtp, "~> 0.11.0" },
       { :ex_doc, ">= 0.11.4", only: :dev },
-      { :earmark, ">= 0.0.0" },
-      { :httpotion, "~> 3.0.0" },
     ]
   end
 
